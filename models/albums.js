@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const {Schema} = mongoose.Schema;
+const {Schema} = mongoose;
 
 // Create album Schema & model
 const AlbumSchema = new Schema({
@@ -11,7 +11,7 @@ const AlbumSchema = new Schema({
     artist: {
         type: String,
     },
-    release_date: {
+    release_year: {
         type: Number,
     },
 });
