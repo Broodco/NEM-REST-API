@@ -12,9 +12,11 @@ router.get("/albums", (req, res) => {
 
 // Add a new album to the db
 router.post("/albums", (req, res) => {
-    console.log("POST request");
+    console.log("POST request", req.body);
     res.send({
         type: "POST",
+        title: req.body.title,
+        artist: req.body.artist,
     });
 });
 

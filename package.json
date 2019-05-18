@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/Broodco/NEM-REST-API#readme",
   "dependencies": {
-    "express": "^4.17.0"
+    "express": "^4.17.0",
+    "mongoose": "^5.5.9"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
