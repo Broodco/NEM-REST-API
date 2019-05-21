@@ -14,6 +14,12 @@ const AlbumSchema = new Schema({
     release_year: {
         type: Number,
     },
+    categories: {
+        type: [String],
+    },
+    numberOfTracks: {
+        type: Number,
+    },
 });
 
 const Album = mongoose.model("album", AlbumSchema);

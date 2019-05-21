@@ -7,6 +7,9 @@ const app = express();
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost/musicdb", {useNewUrlParser: true});
 
+// Set up static folder
+app.use(express.static("public"));
+
 // Set up request parser
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));

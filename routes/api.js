@@ -5,10 +5,9 @@ const router = express.Router();
 
 // Get a list of albums from the db
 router.get("/albums", (req, res, next) => {
-    console.log("GET request");
-    res.send({
-        type: "GET",
-    }).catch(next);
+    Album.find({})
+        .then(album => res.send(album))
+        .catch(next);
 });
 
 // Add a new album to the db
@@ -22,10 +21,11 @@ router.post("/albums", (req, res, next) => {
 
 // Update an album info from the db
 router.put("/albums/:id", (req, res, next) => {
-    console.log("PUT request");
-    res.send({
-        type: "PUT",
-    }).catch(next);
+    Album.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true})
+        .then(album => {
+            res.send(album);
+        })
+        .catch(next);
 });
 
 // Delete an album from the db
